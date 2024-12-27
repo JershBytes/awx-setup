@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 # variables
-AWX_GIT_URL=git@github.com:ansible/awx-operator.git
+AWX_GIT_URL=https://github.com/ansible/awx-operator.git
 AWX_CLONE_PATH="/opt/awx-operator"
 AWX_TAG='2.19.1'
 KUSTOMIZATION_URL="https://raw.githubusercontent.com/JershBytes/awx-setup/refs/heads/main/config/kustomization.yaml"
