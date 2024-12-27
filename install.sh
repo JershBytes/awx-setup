@@ -15,6 +15,8 @@ curl -sfL https://get.k3s.io | sh -
 
 ### AWX Setup ###
 
+echo "Installing and Setting up AWX..."
+
 # Clone awx repo
 git clone "$AWX_GIT_URL" "$AWX_CLONE_PATH" && cd "$AWX_CLONE_PATH" || exit
 
