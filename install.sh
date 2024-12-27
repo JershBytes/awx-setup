@@ -5,7 +5,7 @@ AWX_GIT_URL=https://github.com/ansible/awx-operator.git
 AWX_CLONE_PATH="/opt/awx-operator"
 AWX_TAG='2.19.1'
 KUSTOMIZATION_URL="https://raw.githubusercontent.com/JershBytes/awx-setup/refs/heads/main/config/kustomization.yaml"
-AWX_YAML_URL="https://github.com/JershBytes/awx-setup/blob/main/config/awx.yml"
+AWX_YAML_URL="https://raw.githubusercontent.com/JershBytes/awx-setup/refs/heads/main/config/awx.yml"
 FILENAME="kustomization.yaml"
 HOST_IP=$(hostname -I | cut -d' ' -f1)
 
@@ -52,7 +52,7 @@ kubectl get svc -l "app.kubernetes.io/managed-by=awx-operator"
 echo "AWX has been installed successfully and should now be running at http://${HOST_IP}, use the password below to sign in."
 
 # Grab admin password
-kubectl get secret awx-demo-admin-password -o jsonpath="{.data.password}" | base64 --decode ; echo
+kubectl get secret awx-prod-admin-password -o jsonpath="{.data.password}" | base64 --decode ; echo
 
 
 
