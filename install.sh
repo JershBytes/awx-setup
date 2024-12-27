@@ -9,20 +9,11 @@ AWX_YAML_URL="https://github.com/JershBytes/awx-setup/blob/main/config/awx.yml"
 FILENAME="kustomization.yaml"
 HOST_IP=$(hostname -I | cut -d' ' -f1)
 
-# dependencies function
-install-dependencies() {
-
 # Install k3s
+echo "Installing k3s..."
 curl -sfL https://get.k3s.io | sh -
 
-# Install dependencies
-yum -y install git make jq vim curl wget ansible
-}
-
 ### AWX Setup ###
-
-# Install the needful
-install-dependencies
 
 # Clone awx repo
 git clone "$AWX_GIT_URL" "$AWX_CLONE_PATH" && cd "$AWX_CLONE_PATH" || exit
